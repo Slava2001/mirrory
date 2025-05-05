@@ -13,7 +13,14 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
-set(SRC ./src/main.cpp)
+include_directories(./include)
+set(SRC
+    ./src/main.cpp
+    ./src/object.cpp
+    ./src/aabb.cpp
+    ./src/level.cpp
+    ./src/light_ray.cpp
+)
 
 if ("${PLATFORM}" STREQUAL "Web")
     SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -sASYNCIFY")

@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "level.h"
 
 int main(void) {
     const int screenWidth = 400;
@@ -8,9 +9,13 @@ int main(void) {
 
     SetTargetFPS(60);
 
+    Level lvl;
+
     while (!WindowShouldClose()) {
         BeginDrawing();
-            ClearBackground(BLACK);
+            ClearBackground(WHITE);
+            lvl.update();
+            lvl.draw();
             DrawFPS(0, 0);
         EndDrawing();
     }
